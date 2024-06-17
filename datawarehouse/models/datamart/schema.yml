@@ -1,0 +1,20 @@
+version: 1
+
+models:
+  - name: dm_commodities
+    description: "Datamart para dados de commodities com as movimentações"
+    columns:
+      - name: data
+        description: "Data da observação"
+      - name: ticker
+        description: "Ticker da commodity"
+      - name: valor_fechamento
+        description: "Preço de fechamento da commodity"
+      - name: acao
+        description: "Tipo de transacao (buy/sell)"
+      - name: quantidade
+        description: "Quantidade transacionada"
+      - name: valor
+        description: "Valor da transação"
+      - name: receita
+        description: "Receita da realização da transação"
