@@ -37,7 +37,7 @@ def search_commodities_data_all(commodities):
     return pd.concat(all_data)
 
 def save_in_postgres(df, schema='public'):
-    df.to_sql('commodidites', engine, if_exists='replace', index=True, index_label='Date', schema=schema)
+    df.to_sql('commodities', engine, if_exists='replace', index=True, index_label='Date', schema=schema)
 
 if __name__ == "__main__":
     concatenated_data = search_commodities_data_all(commodities)
