@@ -1,7 +1,7 @@
 version: 1
 
 sources:
-  - name: dbsales
+  - name: dbsales_viz0
     schema: public
     tables:
       - name: commodities
@@ -13,7 +13,7 @@ sources:
             description: "Closing price of commodity"
           - name: symbol
             description: "Commodity Ticker"
-      
+            
       - name: movimentacao_commodities
         description: "Tabela Seed"
         columns:

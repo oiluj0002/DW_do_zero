@@ -5,7 +5,7 @@ WITH source AS (
         action,
         quantity
     FROM
-        {{ source('dbsales', 'movimentacao_commodities') }}
+        {{ source ('dbsales_viz0', 'movimentacao_commodities') }}
 ),
 
 renamed AS (
@@ -14,12 +14,8 @@ renamed AS (
         symbol AS ticker,
         action AS acao,
         quantity AS quantidade
-    FROM source
+    FROM 
+        source
 )
 
-SELECT
-    data,
-    ticker,
-    acao,
-    quantidade
-FROM renamed
+SELECT * FROM renamed

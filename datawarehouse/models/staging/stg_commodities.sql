@@ -4,7 +4,7 @@ WITH source AS (
         "Close",
         "symbol"
     FROM
-        {{ source ('dbsales', 'commodities') }}
+        {{ source ('dbsales_viz0', 'commodities') }}
 ),
 
 renamed AS (

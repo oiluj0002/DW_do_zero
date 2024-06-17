@@ -32,3 +32,24 @@ clean-targets:         # directories to be removed by `dbt clean`
 models:
   datawarehouse:
     # Config indicated by + and applies to all files under models/example/
+    staging:
+      +schema: staging
+      +materialized: view
+
+      stg_commodities:
+        enabled: true
+      
+      stg_movimentacao_commodities:
+        enabled: true
+      +docs:
+        node_color: "#c0c0c0"
+    
+    # Config for models in the datamart folder
+    datamart:
+      +schema: datamart
+      +materialized: view
+      +docs:
+        node_color: "#e6b530"
+      
+      dm_commodities:
+        enabled: true
