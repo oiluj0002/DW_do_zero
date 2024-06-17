@@ -23,16 +23,16 @@ engine = create_engine(DATABASE_URL)
 # pegar a cotacao dos ativos
 commodities = ['CL=F', 'GC=F', 'SI=F']
 
-def search_commodities_data(ticker, period='5d', interval='1d'):
-    ticker = yf.Ticker(ticker)
+def search_commodities_data(symbol, period='5d', interval='1d'):
+    ticker = yf.Ticker(symbol)
     data = ticker.history(period=period, interval=interval)[['Close']]
-    data['ticker'] = ticker
+    data['symbol'] = symbol
     return data
 
 def search_commodities_data_all(commodities):
     all_data = []
-    for ticker in commodities:
-        data = search_commodities_data(ticker)
+    for symbol in commodities:
+        data = search_commodities_data(symbol)
         all_data.append(data)
     return pd.concat(all_data)
 
